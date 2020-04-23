@@ -7,32 +7,20 @@ import { NativeSelect, FormControl } from '@material-ui/core';
 import { getdetails } from './apiindex';
 
 import styles from './StateCards.module.css';
-const StateInfo = (data) => {
-    console.log(data);
-  if ((data.value)===undefined) {
-    return 'Loading...';
-  }
+const StateInfo = (region) => {
+    console.log(region);
 
         return (
     <div className={styles.container}>
-    {/*<FormControl className={styles.formControl}>
-      <NativeSelect defaultValue="" >
-        <option value="">Global</option>
-        {array.map((state,i) => <option key={i} value={state}>abcd</option>)}
-      </NativeSelect>
-    </FormControl>*/}
-    
+     <h2 className={styles.deathsheading}>{region.data.loc}</h2>
       <Grid container spacing={3} justify="center">
         <Grid item xs={12} md={3} component={Card} className={cx(styles.card, styles.infected)}>
           <CardContent>
-          <Typography color="textSecondary" gutterBottom>
-              {data.confirmedCasesIndian}
-            </Typography>
             <Typography color="textSecondary" gutterBottom>
               Infected
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp start={0} end={100} duration={2.75} separator="," />
+              <CountUp start={0} end={region.data.confirmedCasesIndian} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date().toDateString()}
@@ -48,7 +36,7 @@ const StateInfo = (data) => {
               Recovered
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp start={0} end={100} duration={2.75} separator="," />
+              <CountUp start={0} end={region.data.discharged} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date().toDateString()}
@@ -64,7 +52,7 @@ const StateInfo = (data) => {
               Deaths
             </Typography>
             <Typography variant="h5" component="h2">
-              <CountUp start={0} end={100} duration={2.75} separator="," />
+              <CountUp start={0} end={region.data.deaths} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date().toDateString()}

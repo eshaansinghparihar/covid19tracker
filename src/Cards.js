@@ -9,18 +9,6 @@ const Info = ({data}) => {
   if ((data.data)===undefined) {
     return 'Loading...';
   }
-  {/*const fun=({data})=>{
-    console.log(data.data.data.summary.total);
-  }
-  fun({data});
-constructor(props){
-    const {data} = await fetchData();
-    this.state{
-        infected:data.data.summary.total;
-        discharged:data.data.summary.discharged;
-        deaths:data.data.summary.deaths;
-    }
-}*/}
 return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -36,7 +24,7 @@ return (
               {new Date(data.data.lastRefreshed).toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
-              Number of active cases of COVID-19.
+              Number of active cases of COVID-19 in India.
             </Typography>
           </CardContent>
         </Grid>
@@ -52,7 +40,7 @@ return (
               {new Date().toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
-              Number of recoveries from COVID-19.
+              Number of recoveries from COVID-19 in India.
             </Typography>
           </CardContent>
         </Grid>
@@ -68,7 +56,7 @@ return (
               {new Date().toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
-              Number of deaths caused by COVID-19.
+              Number of deaths caused by COVID-19 in India.
             </Typography>
           </CardContent>
         </Grid>
