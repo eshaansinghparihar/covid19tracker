@@ -5,7 +5,6 @@ import cx from 'classnames';
 import styles from './Cards.module.css';
 
 const Info = ({data}) => {
-    console.log({data});
   if ((data.data)===undefined) {
     return 'Loading...';
   }

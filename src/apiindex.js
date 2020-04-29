@@ -17,9 +17,6 @@ export const getdetails=async (stateName)=>{
     if(stateElement.loc===`${stateName}`)
     {
         const {confirmedCasesIndian,discharged,deaths}=stateElement;
-        console.log(`Infected in ${stateName}:${confirmedCasesIndian}`);
-        console.log(`Discharged in ${stateName}:${discharged}`);
-        console.log(`Deaths in ${stateName}:${deaths}`);
         return {stateElement};
     }
 }
